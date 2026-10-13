@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/logo/logobem.png" alt="Logo BEM IBN" width="120" height="120">
+</p>
 
-## Getting Started
+# BEM IBN — Company Profile
 
-First, run the development server:
+Situs company profile **Badan Eksekutif Mahasiswa Institut Bisnis Nusantara (BEM IBN)** periode 2026/2027. Menampilkan profil organisasi, susunan pengurus, program kerja, departemen/kementerian, serta kanal kontak dan aspirasi.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Dibangun sebagai **static site** — seluruh halaman di-export menjadi HTML/CSS/JS murni sehingga ringan, cepat, dan mudah di-hosting di mana saja (termasuk Cloudflare Pages).
+
+## Tech Stack
+
+- **Next.js 16** — App Router, di-build dengan `output: "export"` (static HTML)
+- **TypeScript** — tipe data terdefinisi untuk konten (`data/*.ts`)
+- **React 19**
+- **CSS custom** — ditulis manual di `app/globals.css`, tanpa Tailwind
+- **Font self-hosted** — Fraunces, Archivo, IBM Plex Mono via `next/font/local` (tanpa ketergantungan ke Google Fonts saat build)
+
+## Struktur Folder
+
+```
+app/
+  layout.tsx          # Root layout, metadata, font
+  page.tsx            # Halaman utama (semua section)
+  globals.css         # Seluruh styling & palet warna
+components/
+  Nav.tsx             # Navigasi + logo
+  Hero.tsx            # Pembuka + marquee
+  VisiMisi.tsx        # Visi & misi
+  Pengurus.tsx        # Pimpinan, BPH, kementerian (dengan foto)
+  ProgramKerja.tsx    # Program kerja
+  Departemen.tsx      # Struktur departemen
+  Berita.tsx          # Agenda/kegiatan
+  KontakFooter.tsx    # Kontak + footer
+  ui.tsx              # Komponen kecil (Avatar, SectionHead, dst.)
+data/
+  site.ts             # Teks: meta, navigasi, program, departemen, berita, sosial
+  pengurus.ts         # Data pengurus & kementerian
+public/
+  logo/logobem.png    # Logo BEM
+  pengurus/           # Foto-foto pengurus
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cara Mengedit Konten
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Hampir semua teks ada di `data/site.ts`. Semua pembaruan langsung terlihat di halaman:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Ingin mengubah | File |
+| --- | --- |
+| Nama/navigasi/kontak organisasi | `data/site.ts` |
+| Program kerja, departemen, berita, sosial media | `data/site.ts` |
+| Daftar pengurus & kementerian | `data/pengurus.ts` |
+| Foto pengurus | taruh di `public/pengurus/` lalu isi jalur `foto` di `data/pengurus.ts` |
 
-## Learn More
+## Menjalankan di Lokal
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Buka [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Verifikasi build & lint:
 
-## Deploy on Vercel
+```bash
+npm run build   # output static ke folder out/
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy ke Cloudflare Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Proyek terhubung ke Git; `next build` menghasilkan folder statis `out/` yang langsung dipakai Cloudflare Pages.
+
+1. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
+2. Pilih repository ini, lalu set (framework preset: **Next.js**):
+   - Build command: `npm run build`
+   - Build output directory: `out`
+3. **Save and Deploy** — situs live di `<project>.pages.dev`.
+
+Setiap `git push` ke branch utama otomatis memicu deploy ulang.
