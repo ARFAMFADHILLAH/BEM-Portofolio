@@ -103,13 +103,18 @@ export function Avatar({
 }: {
   nama: string
   foto?: string
-  size?: "sm" | "md" | "lg"
+  size?: "sm" | "md" | "portrait" | "pair"
 }) {
   const className = `avatar avatar-${size}`
   if (foto) {
     return (
       <span className={className}>
-        <Image src={foto} alt={`Foto ${nama}`} fill sizes="(max-width: 620px) 40vw, 220px" />
+        <Image
+          src={foto}
+          alt={`Foto ${nama}`}
+          fill
+          sizes="(max-width: 620px) 90vw, (max-width: 900px) 45vw, 30vw"
+        />
       </span>
     )
   }

@@ -96,7 +96,7 @@ export const departments = [
   },
   {
     abbr: "KA",
-    name: "KEMENTRIAN ADVOKASI",
+    name: "KEMENTERIAN ADVOKASI",
     desc: "Kepedulian sosial, kemanusiaan, dan keberlanjutan kampus yang hijau.",
   },
   {
@@ -106,7 +106,7 @@ export const departments = [
   },
   {
     abbr: "SDM",
-    name: "KEMENTRIAN SDM",
+    name: "KEMENTERIAN SDM",
     desc: "Menjaga cerita organisasi tetap jujur, cepat, dan sampai. Media, publikasi, desain.",
   },
   {
@@ -116,12 +116,12 @@ export const departments = [
   },
   {
   abbr: "KOM",
-    name: "KEMENTRIAN KOMINFO",
+    name: "KEMENTERIAN KOMINFO",
     desc: "Menumbuhkan pemilik usaha muda kampus, mulai dari pikiran, bukan dari modal.",
   },
   {
   abbr: "KLN",
-    name: "KEMENTRIAN LUAR & DALAM NEGERI",
+    name: "KEMENTERIAN LUAR & DALAM NEGERI",
     desc: "Menumbuhkan pemilik usaha muda kampus, mulai dari pikiran, bukan dari modal.",
   },
 ] as const

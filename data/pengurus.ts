@@ -1,78 +1,111 @@
-export type Pengurus = {
+export type Person = {
+  nama: string
+  prodi: string
+}
+
+export type Pimpinan = {
   nama: string
   jabatan: string
   prodi: string
-  foto?: string
+  foto: string
 }
 
-export const pimpinan: Pengurus[] = [
-  { nama: "Rayhan Aditya Widiantoro", jabatan: "PRESIDEN MAHASISWA", prodi: "Manajemen Bisnis" },
-  { nama: "Etia Sekar Sauvany", jabatan: "WAKIL PRESIDEN MAHASISWA", prodi: "Manajemen Bisnis" },
-]
+export type Kelompok = {
+  label: string
+  abbr: string
+  foto: string
+  anggota: [Person, Person]
+}
 
-export const bph: Pengurus[] = [
-  { nama: "Muhamad Azhar", jabatan: "SEKRETARIS UMUM", prodi: "Manajemen Bisnis" },
-  { nama: "Mahardika Aurin Adriana", jabatan: "SEKRETARIS UMUM", prodi: "Manajemen Bisnis" },
-  { nama: "Michelle Surya Wiguna", jabatan: "BENDAHARA UMUM", prodi: "Manajemen Keuangan" },
-  { nama: "Ernes Pramudhita Cintya", jabatan: "BENDAHARA UMUM", prodi: "Manajemen Keuangan" },
-]
-
-// export const kepalaDepartemen: (Pengurus & { abbr: string })[] = [
-//   { abbr: "DN", nama: "Fajar Ramadhan", jabatan: "Kepala Departemen Dalam Negeri", prodi: "Bisnis Digital" },
-//   { abbr: "PSDM", nama: "Kirana Maharani", jabatan: "Kepala Departemen PSDM", prodi: "Manajemen" },
-//   { abbr: "SOS", nama: "Aulia Rahman Hakim", jabatan: "Kepala Departemen Sosial & Lingkungan", prodi: "Akuntansi" },
-//   { abbr: "ADV", nama: "Dewi Anggraini", jabatan: "Kepala Departemen Advokasi & Aspirasi", prodi: "Sistem Informasi" },
-//   { abbr: "KOM", nama: "Yoga Prasetyo", jabatan: "Kepala Departemen Kominfo", prodi: "Bisnis Digital" },
-//   { abbr: "KWU", nama: "Intan Permatasari", jabatan: "Kepala Departemen Kewirausahaan", prodi: "Manajemen" },
-// ]
-
-export const staf: { dept: string; abbr: string; members: Pengurus[] }[] = [
+export const pimpinan: Pimpinan[] = [
   {
-    dept: "KEMENTRIAN ADVOKASI",
+    nama: "Rayhan Aditya Widiantoro",
+    jabatan: "Presiden Mahasiswa",
+    prodi: "Manajemen Bisnis",
+    foto: "/pengurus/rayhan-aditya-widiantoro.jpg",
+  },
+  {
+    nama: "Etia Sekar Sauvany",
+    jabatan: "Wakil Presiden Mahasiswa",
+    prodi: "Manajemen Bisnis",
+    foto: "/pengurus/etia-sekar-sauvany.jpg",
+  },
+]
+
+export const bph: Kelompok[] = [
+  {
+    label: "Sekretaris Umum",
+    abbr: "SU",
+    foto: "/pengurus/muhamad-azhar-mahardika-aurin-adriana.jpg",
+    anggota: [
+      { nama: "Muhamad Azhar", prodi: "Manajemen Bisnis" },
+      { nama: "Mahardika Aurin Adriana", prodi: "Manajemen Bisnis" },
+    ],
+  },
+  {
+    label: "Bendahara Umum",
+    abbr: "BU",
+    foto: "/pengurus/michelle-surya-wiguna-ernes-pramudhita-cintya.jpg",
+    anggota: [
+      { nama: "Michelle Surya Wiguna", prodi: "Manajemen Keuangan" },
+      { nama: "Ernes Pramudhita Cintya", prodi: "Manajemen Keuangan" },
+    ],
+  },
+]
+
+export const staf: Kelompok[] = [
+  {
+    label: "Kementerian Advokasi",
     abbr: "KA",
-    members: [
-      { nama: "Dimas Ayodhiya Shara", jabatan: "Staf", prodi: "Broadcasting" },
-      { nama: "Kayla Zilbi", jabatan: "Staf", prodi: "Marketing Communication" },
+    foto: "/pengurus/dimas-ayodhiya-shara-kayla-zilbi.jpg",
+    anggota: [
+      { nama: "Dimas Ayodhiya Shara", prodi: "Broadcasting" },
+      { nama: "Kayla Zilbi", prodi: "Marketing Communication" },
     ],
   },
   {
-    dept: "APARATUR NEGARA",
+    label: "Aparatur Negara",
     abbr: "AN",
-    members: [
-      { nama: "Keisya Aulia Salsabila", jabatan: "Staf", prodi: "Akuntansi" },
-      { nama: "Anastacia Cagiva Wijaya", jabatan: "Staf", prodi: "Marketing Communication" },
+    foto: "/pengurus/keisya-aulia-salsabila-anastacia-cagiva-wijaya.jpg",
+    anggota: [
+      { nama: "Keisya Aulia Salsabila", prodi: "Akuntansi" },
+      { nama: "Anastacia Cagiva Wijaya", prodi: "Marketing Communication" },
     ],
   },
   {
-    dept: "KEMENTRIAN SDM",
+    label: "Kementerian SDM",
     abbr: "SDM",
-    members: [
-      { nama: "Matthew Gunawan", jabatan: "Staf", prodi: "Sistem Informasi" },
-      { nama: "Amanda Zahratun Nabila", jabatan: "Staf", prodi: "Manajemen Keuangan" },
+    foto: "/pengurus/matthew-gunawan-amanda-zahratun-nabila.jpg",
+    anggota: [
+      { nama: "Matthew Gunawan", prodi: "Sistem Informasi" },
+      { nama: "Amanda Zahratun Nabila", prodi: "Manajemen Keuangan" },
     ],
   },
   {
-    dept: "KAJIAN & AKSI STRATEGIS",
+    label: "Kajian & Aksi Strategis",
     abbr: "KAS",
-    members: [
-      { nama: "⁠Muhamad Ezra Adriansyah", jabatan: "Staf", prodi: "Broadcasting" },
-      { nama: "Haikal Rafly Ananda", jabatan: "Staf", prodi: "Broadcasting" },
+    foto: "/pengurus/muhamad-ezra-adriansyah-haikal-rafly-ananda.jpg",
+    anggota: [
+      { nama: "Muhamad Ezra Adriansyah", prodi: "Broadcasting" },
+      { nama: "Haikal Rafly Ananda", prodi: "Broadcasting" },
     ],
   },
   {
-    dept: "KEMENTRIAN KOMINFO",
+    label: "Kementerian Kominfo",
     abbr: "KOM",
-    members: [
-      { nama: "Hanna Nabilah Octavia", jabatan: "Staf", prodi: "Marketing Communication" },
-      { nama: "Isabel Joan", jabatan: "Staf", prodi: "Marketing Communication" },
+    foto: "/pengurus/hanna-nabilah-octavia-isabel-joan.jpg",
+    anggota: [
+      { nama: "Hanna Nabilah Octavia", prodi: "Marketing Communication" },
+      { nama: "Isabel Joan", prodi: "Marketing Communication" },
     ],
   },
   {
-    dept: "KEMENTRIAN LUAR & DALAM NEGERI",
+    label: "Kementerian Luar & Dalam Negeri",
     abbr: "KLN",
-    members: [
-      { nama: "Maharani Audrey Adriana", jabatan: "Staf", prodi: "Manajemen Bisnis" },
-      { nama: "Arfa Muhammad Fadhillah", jabatan: "Staf", prodi: "Sistem Informasi" },
+    foto: "/pengurus/arfa-muhammad-fadhillah-maharani-audrey-adriana.jpg",
+    anggota: [
+      { nama: "Maharani Audrey Adriana", prodi: "Manajemen Bisnis" },
+      { nama: "Arfa Muhammad Fadhillah", prodi: "Sistem Informasi" },
     ],
   },
 ]

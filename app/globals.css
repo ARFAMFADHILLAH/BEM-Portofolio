@@ -930,13 +930,25 @@ p {
   font-size: 1.7rem;
 }
 
-.avatar-lg {
+.avatar-portrait {
   width: clamp(120px, 20vw, 184px);
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
 }
 
-.avatar-lg .avatar-initials {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+.avatar-portrait .avatar-initials {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+}
+
+.avatar-pair {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: none;
+  border-bottom: 1.5px solid var(--ink);
+  border-radius: 0;
+}
+
+.avatar-pair .avatar-initials {
+  font-size: 2.4rem;
 }
 
 /* ---------- pengurus ---------- */
@@ -1023,84 +1035,63 @@ p {
   background: var(--line-strong);
 }
 
-.peng-grid {
+.peng-pairs {
   display: grid;
-  gap: clamp(0.9rem, 2vw, 1.3rem);
+  gap: clamp(0.9rem, 2vw, 1.4rem);
 }
 
-.peng-grid-2 {
+.peng-pairs-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.peng-grid-3 {
+.peng-pairs-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.peng-card {
+.peng-pair {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.05rem;
+  flex-direction: column;
   border: 1.5px solid var(--ink);
   border-radius: var(--radius);
   background: var(--paper-2);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.peng-card:hover {
-  border-color: var(--blue);
-  transform: translateY(-3px);
+.peng-pair:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--yellow);
 }
 
-.peng-staf {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(1.4rem, 3vw, 2.4rem);
+.peng-pair-body {
+  padding: clamp(0.9rem, 2vw, 1.2rem);
 }
 
-.peng-staf-group {
-  border-top: 1.5px solid var(--ink);
-  padding-top: 0.9rem;
-}
-
-.peng-staf-dept {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 0.6rem;
-}
-
-.peng-staf-group ul {
+.peng-pair-names {
   list-style: none;
-  margin: 0;
+  margin: 0.5rem 0 0;
   padding: 0;
 }
 
-.peng-staf-group li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.peng-staf-info {
+.peng-pair-names li {
   display: flex;
   flex-direction: column;
-  line-height: 1.25;
+  gap: 0.1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--line);
 }
 
-.peng-staf-name {
+.peng-pair-names li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.peng-pair-name {
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
-.peng-staf-prodi {
+.peng-pair-prodi {
   font-size: 0.78rem;
   color: var(--muted);
 }
@@ -1129,8 +1120,7 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .peng-grid-3,
-  .peng-staf {
+  .peng-pairs-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1168,9 +1158,8 @@ p {
   }
 
   .peng-leads,
-  .peng-grid-2,
-  .peng-grid-3,
-  .peng-staf {
+  .peng-pairs-2,
+  .peng-pairs-3 {
     grid-template-columns: 1fr;
   }
 
