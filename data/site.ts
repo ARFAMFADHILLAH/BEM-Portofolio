@@ -1,7 +1,7 @@
 export const site = {
   organisasi: "BEM",
-  institusi: "Institut Bisnis Nusantara",
-  singkatan: "IBN",
+  institusi: "Universitas Nusantara",
+  singkatan: "UNARA",
   periode: "2026",
   email: "bemibn.pulomas@gmail.com",
   alamat: "Jl. Pulo Mas Timur No.3a, RT.1/RW.16, Kayu Putih, Kec. Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta",
@@ -16,14 +16,14 @@ export const site = {
 }
 
 export const hero = {
-  kicker: "Badan Eksekutif Mahasiswa · Institut Bisnis Nusantara",
+  kicker: "Badan Eksekutif Mahasiswa · Universitas Nusantara",
   headlineTop: "Suara mahasiswa,",
   headlineBottom: "gerakan Nusantara.",
   sub: "Badan eksekutif mahasiswa yang menghidupkan kampus: mengawal aspirasi, membuka ruang berkarya, dan melatih pemimpin yang siap turun tangan.",
   meta: [
     { label: "Periode", value: "2026 / 2027" },
     { label: "Basis", value: "Jakarta, ID" },
-    // { label: "Amanat", value: "Rapat Kerja BEM IBN" },
+    // { label: "Amanat", value: "Rapat Kerja BEM UNARA" },
   ],
   stamp: "MERDEKA BERKARYA",
 }
@@ -153,6 +153,6 @@ export const news = [
 export const socials = [
   { label: "Instagram", value: "@bem.ibn" }
   // { label: "TikTok", value: "@bemibn" },
-  // { label: "LinkedIn", value: "BEM IBN" },
-  // { label: "YouTube", value: "BEM IBN TV" },
+  // { label: "LinkedIn", value: "BEM UNARA" },
+  // { label: "YouTube", value: "BEM UNARA TV" },
 ] as const

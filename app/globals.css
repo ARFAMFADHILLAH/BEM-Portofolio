@@ -1,3 +1,6 @@
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
 :root {
   --paper: #f7f4ee;
   --paper-2: #fffdf8;
@@ -1147,33 +1150,144 @@ p {
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 640px) {
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .section-head {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+  }
+
+  .nav {
+    gap: .5rem;
+  }
   .nav-links {
     display: none;
   }
-
-  .dep-grid,
-  .news-grid {
-    grid-template-columns: 1fr;
+  .nav-mark {
+    min-width: 0;
+  }
+  .nav-mark-text {
+    font-size: .7rem;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-cta {
+    flex: 0 0 auto;
+    padding: .4rem .65rem;
+    white-space: nowrap;
   }
 
+  .hero {
+    padding-top: 2.5rem;
+  }
+  .hero-kicker {
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+  }
+  .hero-title {
+    font-size: clamp(2.1rem, 10vw, 3.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+  }
+  .hero-line {
+    overflow-wrap: anywhere;
+  }
+  .stamp {
+    transform: rotate(-4deg);
+  }
+
+  .dep-grid,
+  .news-grid,
   .peng-leads,
   .peng-pairs-2,
   .peng-pairs-3 {
     grid-template-columns: 1fr;
   }
-
-  .peng-lead {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
   .dep-card[data-odd="true"] {
     transform: none;
   }
+  .dep-card {
+    padding: 1.1rem 1rem;
+  }
+  .news-grid {
+    gap: 1.5rem;
+  }
+  .news-meta {
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .news-title {
+    font-size: 1.15rem;
+  }
 
-  .kontak-title,
-  .hero-title {
+  .peng-lead {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .avatar-portrait {
+    width: min(55vw, 160px);
+  }
+  .peng-role {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .prog-row {
+    grid-template-columns: 2rem minmax(0, 1fr) 22px;
+    grid-template-areas:
+      "no tag go"
+      "body body body";
+    column-gap: .6rem;
+    row-gap: .4rem;
+    padding: .9rem .5rem .9rem 0;
+  }
+  .prog-no {
+    align-self: start;
+  }
+  .prog-go {
+    justify-self: end;
+  }
+  .prog-tag {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: left;
+  }
+
+  .kontak {
+    padding-top: 3rem;
+  }
+  .kontak-title {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+    line-height: 1.05;
     letter-spacing: -0.02em;
+  }
+  .kontak-mail {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+  }
+  .kontak-mail .arrow-right {
+    flex: 0 0 22px;
+  }
+  .kontak-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.75rem;
+  }
+  .sos-list li {
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+  }
+  .sos-value {
+    grid-column: 2;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -1189,4 +1303,20 @@ p {
   *::after {
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Custom Select / Dropdown Styling */
+.select-custom {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230d2145' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 36px;
+}
+
+.select-custom:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px var(--blue);
 }

@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="public/logo/logobem.png" alt="Logo BEM IBN" width="120" height="120">
+  <img src="public/logo/logobem.png" alt="Logo BEM UNARA" width="120" height="120">
 </p>
 
-# BEM IBN — Company Profile
+# BEM UNARA — Company Profile
 
-Situs company profile **Badan Eksekutif Mahasiswa Institut Bisnis Nusantara (BEM IBN)** periode 2026/2027. Menampilkan profil organisasi, susunan pengurus, program kerja, departemen/kementerian, serta kanal kontak dan aspirasi.
+Situs company profile **Badan Eksekutif Mahasiswa Universitas Nusantara (BEM UNARA)** periode 2026/2027. Menampilkan profil organisasi, susunan pengurus, program kerja, departemen/kementerian, serta kanal kontak dan aspirasi.
 
 Dibangun sebagai **static site** — seluruh halaman di-export menjadi HTML/CSS/JS murni sehingga ringan, cepat, dan mudah di-hosting di mana saja (termasuk Cloudflare Pages).
 

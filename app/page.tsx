@@ -1,6 +1,7 @@
 import { Nav } from "@/components/Nav"
 import { Hero } from "@/components/Hero"
 import { VisiMisi } from "@/components/VisiMisi"
+import KalenderKegiatan from "@/components/KalenderKegiatan"
 import { Pengurus } from "@/components/Pengurus"
 import { ProgramKerja } from "@/components/ProgramKerja"
 import { Departemen } from "@/components/Departemen"
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <VisiMisi />
+        <KalenderKegiatan />
         <Pengurus />
         <ProgramKerja />
         <Departemen />

@@ -37,12 +37,13 @@ const plexMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "BEM Institut Bisnis Nusantara",
+  title: "BEM Universitas Nusantara",
   description:
-    "Company profile Badan Eksekutif Mahasiswa Institut Bisnis Nusantara — suara mahasiswa, gerakan Nusantara. Visi misi, pengurus, program kerja, departemen, dan kegiatan.",
+    "Company profile Badan Eksekutif Mahasiswa Universitas Nusantara — suara mahasiswa, gerakan Nusantara. Visi misi, pengurus, program kerja, departemen, dan kegiatan.",
   keywords: [
     "BEM",
-    "Institut Bisnis Nusantara",
+    "Universitas Nusantara",
+    "UNARA",
     "Badan Eksekutif Mahasiswa",
     "organisasi mahasiswa",
   ],

@@ -7,7 +7,7 @@ export function Nav() {
       <a className="nav-mark" href="#">
         <Image
           src="/logo/logobem.png"
-          alt="Logo BEM IBN"
+          alt="Logo BEM UNARA"
           width={34}
           height={34}
           className="nav-mark-logo"
